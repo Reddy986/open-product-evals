@@ -62,6 +62,9 @@ and a product decision gate.
 Follow the hands-on [Learn LLM evals by doing](docs/EVALS_101.md) path to turn
 this example into a disciplined model experiment.
 
+See the [worked baseline decision](examples/keyword-baseline-development.md) for
+an example of rejecting a candidate despite apparently strong category accuracy.
+
 ## Run open models locally
 
 ### 1. Install and start Ollama
@@ -97,6 +100,8 @@ python3 compare_results.py results/model-a.json results/model-b.json \
 The comparison checks dataset fingerprints, summarizes dominant failure modes,
 and applies an explicit risk-first product gate. Read
 [Publishing trustworthy results](docs/RESULTS_GUIDE.md) before sharing scores.
+Use the [decision-record template](docs/DECISION_RECORD_TEMPLATE.md) to commit to
+the product question, thresholds, and next actions before looking at test data.
 
 No Python packages are required; the runner uses only the standard library.
 
