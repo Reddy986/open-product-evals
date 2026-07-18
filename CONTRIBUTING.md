@@ -28,7 +28,7 @@ Run the checks before opening a pull request:
 
 ```bash
 python3 -m unittest discover -v
-python3 -m compileall -q open_product_evals run_eval.py
+python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py
 ```
 
 The project currently requires Python 3.10 or newer and intentionally has no third-party Python dependencies.
@@ -46,3 +46,5 @@ When sharing results, include:
 
 Do not present a small difference as meaningful without repeated trials or uncertainty estimates.
 
+Use the [results guide](docs/RESULTS_GUIDE.md) and include the generated comparison
+report when proposing a model or prompt change.

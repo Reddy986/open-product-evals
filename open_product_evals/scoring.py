@@ -57,7 +57,17 @@ def score_records(records: Iterable[dict[str, Any]]) -> dict[str, Any]:
         raise ValueError("At least one record is required")
 
     totals = defaultdict(int)
-    per_slice: dict[str, dict[str, int]] = defaultdict(lambda: {"total": 0, "exact": 0})
+    per_slice: dict[str, dict[str, int]] = defaultdict(
+        lambda: {
+            "total": 0,
+            "valid": 0,
+            "category": 0,
+            "priority": 0,
+            "escalation": 0,
+            "exact": 0,
+        }
+    )
+    error_summary = defaultdict(int)
     failures: list[dict[str, Any]] = []
 
     for row in rows:
@@ -87,8 +97,32 @@ def score_records(records: Iterable[dict[str, Any]]) -> dict[str, Any]:
         elif not predicted_escalation and expected["escalate"]:
             totals["fn"] += 1
 
+        error_types: list[str] = []
+        if not valid:
+            error_types.append("invalid_schema")
+            if expected["escalate"]:
+                error_types.append("missed_escalation")
+        else:
+            if not category_ok:
+                error_types.append("wrong_category")
+            if not priority_ok:
+                error_types.append("wrong_priority")
+            if output["escalate"] and not expected["escalate"]:
+                error_types.append("unnecessary_escalation")
+            elif not output["escalate"] and expected["escalate"]:
+                error_types.append("missed_escalation")
+
+        for error_type in error_types:
+            error_summary[error_type] += 1
+        if len(error_types) > 1:
+            error_summary["multiple_errors"] += 1
+
         for slice_name in row.get("slices", []):
             per_slice[slice_name]["total"] += 1
+            per_slice[slice_name]["valid"] += int(valid)
+            per_slice[slice_name]["category"] += int(category_ok)
+            per_slice[slice_name]["priority"] += int(priority_ok)
+            per_slice[slice_name]["escalation"] += int(escalation_ok)
             per_slice[slice_name]["exact"] += int(exact)
 
         if not exact:
@@ -98,6 +132,8 @@ def score_records(records: Iterable[dict[str, Any]]) -> dict[str, Any]:
                     "expected": expected,
                     "output": output,
                     "valid_schema": valid,
+                    "error_types": error_types,
+                    "slices": row.get("slices", []),
                 }
             )
 
@@ -119,10 +155,22 @@ def score_records(records: Iterable[dict[str, Any]]) -> dict[str, Any]:
         "slices": {
             name: {
                 "count": values["total"],
+                "category_accuracy": _safe_ratio(
+                    values["category"], values["total"]
+                ),
+                "priority_accuracy": _safe_ratio(
+                    values["priority"], values["total"]
+                ),
+                "escalation_accuracy": _safe_ratio(
+                    values["escalation"], values["total"]
+                ),
                 "exact_match": _safe_ratio(values["exact"], values["total"]),
+                "valid_schema_rate": _safe_ratio(
+                    values["valid"], values["total"]
+                ),
             }
             for name, values in sorted(per_slice.items())
         },
+        "error_summary": dict(sorted(error_summary.items())),
         "failures": failures,
     }
-

@@ -1,0 +1,65 @@
+name: Propose an evaluation edge case
+description: Suggest a fictional support ticket that exposes an important behavior.
+title: "[edge case] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: product-risk
+    attributes:
+      label: Product risk
+      description: What costly model behavior would this example reveal?
+    validations:
+      required: true
+  - type: textarea
+    id: ticket
+    attributes:
+      label: Fictional ticket
+      description: Do not include customer, employer, or personal data.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Expected category
+      options:
+        - billing
+        - account_access
+        - technical_issue
+        - feature_request
+        - general_question
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Expected priority
+      options:
+        - low
+        - medium
+        - high
+        - urgent
+    validations:
+      required: true
+  - type: dropdown
+    id: escalate
+    attributes:
+      label: Should a human act or investigate?
+      options:
+        - "false"
+        - "true"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Label rationale and proposed slices
+      description: Tie the labels to TASK.md and note any genuine ambiguity.
+    validations:
+      required: true
+  - type: checkboxes
+    id: provenance
+    attributes:
+      label: Safe provenance
+      options:
+        - label: This example is fictional or safely licensed and contains no sensitive data.
+          required: true

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import statistics
@@ -38,6 +39,14 @@ def load_dataset(path: Path, split: str) -> list[dict[str, Any]]:
 
 def model_slug(model: str) -> str:
     return re.sub(r"[^a-zA-Z0-9._-]+", "-", model).strip("-")
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(65536), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def run_model(
@@ -98,6 +107,25 @@ def print_summary(result: dict[str, Any]) -> None:
         print(f"{name.replace('_', ' ').title():<28} {value:>7.1%}")
     print(f"{'Median latency':<28} {latency['median']:>6.2f}s")
 
+    errors = result["score"].get("error_summary", {})
+    if errors:
+        ranked_errors = sorted(errors.items(), key=lambda item: (-item[1], item[0]))
+        summary = ", ".join(
+            f"{name.replace('_', ' ')}={count}" for name, count in ranked_errors
+        )
+        print(f"Top errors: {summary}")
+
+    slices = result["score"].get("slices", {})
+    if slices:
+        weakest = sorted(
+            slices.items(), key=lambda item: (item[1]["exact_match"], item[0])
+        )[:3]
+        summary = ", ".join(
+            f"{name}={values['exact_match']:.0%} (n={values['count']})"
+            for name, values in weakest
+        )
+        print(f"Weakest slices: {summary}")
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -124,6 +152,15 @@ def main() -> None:
 
     for model in args.models:
         result = run_model(model, dataset, prompt, args.base_url)
+        result["evaluation"] = {
+            "split": args.split,
+            "selected_examples": len(dataset),
+            "dataset_path": str(args.dataset),
+            "dataset_sha256": file_sha256(args.dataset),
+            "prompt_path": str(args.prompt),
+            "prompt_sha256": file_sha256(args.prompt),
+            "temperature": 0,
+        }
         output_path = args.output_dir / f"{model_slug(model)}-{args.split}-{timestamp}.json"
         output_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print_summary(result)
@@ -132,4 +169,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
