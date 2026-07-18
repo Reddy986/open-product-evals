@@ -63,6 +63,12 @@ class ScoreRecordsTests(unittest.TestCase):
         self.assertEqual(result["metrics"]["priority_accuracy"], 0.5)
         self.assertEqual(result["metrics"]["exact_match"], 0.5)
         self.assertEqual(result["metrics"]["escalation_recall"], 1.0)
+        self.assertEqual(result["error_summary"], {"wrong_priority": 1})
+        self.assertEqual(result["slices"]["billing"]["category_accuracy"], 1.0)
+        self.assertEqual(result["slices"]["feature"]["priority_accuracy"], 0.0)
+        self.assertEqual(
+            result["failures"][0]["error_types"], ["wrong_priority"]
+        )
 
     def test_invalid_output_counts_as_missed_escalation(self):
         result = score_records(
@@ -80,8 +86,35 @@ class ScoreRecordsTests(unittest.TestCase):
         )
         self.assertEqual(result["metrics"]["valid_schema_rate"], 0.0)
         self.assertEqual(result["metrics"]["escalation_recall"], 0.0)
+        self.assertEqual(
+            result["error_summary"],
+            {"invalid_schema": 1, "missed_escalation": 1, "multiple_errors": 1},
+        )
+
+    def test_reports_unnecessary_escalation(self):
+        result = score_records(
+            [
+                {
+                    "id": "one",
+                    "expected": {
+                        "category": "general_question",
+                        "priority": "low",
+                        "escalate": False,
+                    },
+                    "output": {
+                        "category": "general_question",
+                        "priority": "low",
+                        "escalate": True,
+                    },
+                    "slices": ["self_service"],
+                }
+            ]
+        )
+        self.assertEqual(result["error_summary"], {"unnecessary_escalation": 1})
+        self.assertEqual(
+            result["slices"]["self_service"]["escalation_accuracy"], 0.0
+        )
 
 
 if __name__ == "__main__":
     unittest.main()
-

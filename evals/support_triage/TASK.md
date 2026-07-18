@@ -38,8 +38,17 @@ One fictional customer-support message. The model returns a category, a priority
 - Exact-match accuracy across all three fields
 - Valid-schema rate
 - Exact-match accuracy by behavioral slice
+- Category, priority, escalation, and schema accuracy by behavioral slice
+- Failure counts for invalid schemas, routing errors, priority errors, missed escalations, and unnecessary escalations
 
 Escalation recall is the most important first-release metric because a false negative can leave a risky or time-sensitive case unattended.
+
+## Worked decision gate
+
+The comparison report uses an illustrative gate of 95% valid schemas, 90%
+escalation recall, and 70% exact match. These are hypotheses chosen to make the
+product decision explicit; they are not a production-safety certification. The
+public synthetic test set is too small to demonstrate production reliability.
 
 ## Dataset
 
@@ -51,4 +60,3 @@ The dataset contains 60 manually reviewed, synthetic English-language tickets: 4
 - The examples are synthetic and may not reflect real traffic distributions.
 - The public test labels make this appropriate for learning and regression testing, not a contamination-resistant leaderboard.
 - The evaluation does not measure response quality, multi-turn resolution, safety beyond the included escalation policy, or production reliability.
-

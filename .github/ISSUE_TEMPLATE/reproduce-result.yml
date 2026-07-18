@@ -1,0 +1,61 @@
+name: Share a reproduced model result
+description: Report a comparable run with enough context for others to inspect it.
+title: "[result] "
+labels: ["question"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Exact model tag or revision
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime and version
+      placeholder: Ollama 0.x.x
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and hardware
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command used
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: fingerprints
+    attributes:
+      label: Dataset and prompt fingerprints
+      description: Copy these from the result JSON.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics and failed gates
+      description: Include example count, split, and the generated comparison table.
+    validations:
+      required: true
+  - type: textarea
+    id: failures
+    attributes:
+      label: Most informative failures
+      description: Describe patterns without including sensitive data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data safety
+      options:
+        - label: I reviewed the submission and it contains no customer, employer, personal, or secret data.
+          required: true
+
