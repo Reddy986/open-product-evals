@@ -49,6 +49,15 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def portable_path(path: Path) -> str:
+    """Use a repository-relative path when the artifact lives in this project."""
+
+    try:
+        return str(path.resolve().relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def run_model(
     model: str,
     dataset: list[dict[str, Any]],
@@ -155,9 +164,9 @@ def main() -> None:
         result["evaluation"] = {
             "split": args.split,
             "selected_examples": len(dataset),
-            "dataset_path": str(args.dataset),
+            "dataset_path": portable_path(args.dataset),
             "dataset_sha256": file_sha256(args.dataset),
-            "prompt_path": str(args.prompt),
+            "prompt_path": portable_path(args.prompt),
             "prompt_sha256": file_sha256(args.prompt),
             "temperature": 0,
         }

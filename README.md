@@ -4,7 +4,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
-[![Status: v0.2](https://img.shields.io/badge/status-v0.2-blue.svg)](#roadmap)
+[![Status: v0.2.1](https://img.shields.io/badge/status-v0.2.1-blue.svg)](#roadmap)
 
 Open Product Evals is a learning-in-public project: each evaluation starts with a concrete product question, an inspectable dataset, deterministic scoring, and an honest account of what the results do—and do not—prove.
 
@@ -30,7 +30,25 @@ Expected output:
 }
 ```
 
-The runner asks each local model to classify 20 held-out synthetic tickets, then reports category accuracy, priority accuracy, escalation precision and recall, exact match, schema validity, latency, and performance on behavioral slices.
+The workflow uses 40 development tickets for error analysis, then reserves 20
+held-out tickets for the final comparison. It reports category accuracy,
+priority accuracy, escalation precision and recall, exact match, schema
+validity, latency, and performance on behavioral slices.
+
+## Latest published comparison
+
+The first reproducible local-model run compares Qwen3 4B with Gemma 3 4B on all
+40 development examples:
+
+| Candidate | Exact match | Escalation recall | Median latency | Gate |
+|---|---:|---:|---:|:---:|
+| `qwen3:4b` | 72.5% | 94.7% | 34.05s | PASS |
+| `gemma3:4b` | 60.0% | 89.5% | 1.64s | FAIL |
+
+Qwen3 was more accurate; Gemma 3 was about 21 times faster. Read the
+[decision record and raw results](results/published/2026-07-18-open-model-comparison/README.md)
+for the setup, failure analysis, limitations, and next experiment. A development
+gate pass is not a production-safety claim.
 
 ## Why this exists
 
@@ -79,10 +97,12 @@ ollama pull gemma3:4b
 ### 2. Run a smoke test
 
 ```bash
-python3 run_eval.py --models qwen3:4b gemma3:4b --limit 3
+python3 run_eval.py --models qwen3:4b gemma3:4b --split development --limit 3
 ```
 
-### 3. Run the held-out test split
+### 3. After iteration, run the held-out test split
+
+Freeze the prompt, labels, and gate first. Then run the held-out split once:
 
 ```bash
 python3 run_eval.py --models qwen3:4b gemma3:4b --split test

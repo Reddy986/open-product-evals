@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 — First open-model comparison
+
+- Publish reproducible Qwen3 4B and Gemma 3 4B development runs with raw outputs.
+- Document the quality-versus-latency decision, failure review, and limitations.
+- Record runtime, hardware, model IDs, quantization, and artifact fingerprints.
+- Keep in-repository result paths portable across contributor machines.
+- Make the documented smoke test use the development split.
+
 ## 0.2.0 — Error analysis and learning workflow
 
 - Add a zero-setup transparent keyword baseline.
@@ -16,4 +24,3 @@
 - Define an inspectable category, priority, and escalation policy.
 - Add deterministic scoring and a standard-library Ollama runner.
 - Separate development and held-out test examples.
-
