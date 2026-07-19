@@ -36,12 +36,17 @@ fixed individual examples.
 | Model | Exact improvements | Exact regressions | Priority improvements | Priority regressions | Escalation improvements | Escalation regressions |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma 3 4B | 2 | 10 | 3 | 7 | 2 | 7 |
-| Qwen3 4B | 7 | 9 | 6 | 7 | 2 | 3 |
+| Qwen3 4B | 7 | 9 | 6 | 7 | 1 | 3 |
 
 The paired view explains why inspecting only a few hand-picked wins would have
 been misleading. Qwen3 corrected the unrecognized-charge priority, the
 euro-receipt category, and several boundary priorities, but it introduced more
 total exact-match regressions than improvements.
+
+The generated report corrected an earlier hand count that credited Qwen's
+invalid-schema `dev-015` response as an escalation improvement. The scorer
+gives invalid outputs no field credit, so the auditable count is one improvement
+and three regressions.
 
 ## Failure mechanism
 
@@ -67,6 +72,13 @@ python3 run_eval.py \
   --models gemma3:4b qwen3:4b \
   --split development \
   --prompt evals/support_triage/prompt_v2.txt
+
+python3 compare_variants.py \
+  results/published/2026-07-18-open-model-comparison/qwen3-4b-development.json \
+  results/published/2026-07-18-priority-rubric-v2/qwen3-4b-development.json \
+  --baseline-label "Prompt v1" \
+  --candidate-label "Prompt v2" \
+  --output results/published/2026-07-18-priority-rubric-v2/qwen3-4b-variant-comparison.md
 ```
 
 - Dataset SHA-256:
@@ -81,6 +93,8 @@ python3 run_eval.py \
 Artifacts:
 
 - [Generated v2 model comparison](comparison.md)
+- [Gemma 3 paired prompt comparison](gemma3-4b-variant-comparison.md)
+- [Qwen3 paired prompt comparison](qwen3-4b-variant-comparison.md)
 - [Gemma 3 raw v2 result](gemma3-4b-development.json)
 - [Qwen3 raw v2 result](qwen3-4b-development.json)
 - [Prompt v1 results](../2026-07-18-open-model-comparison/README.md)

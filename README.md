@@ -4,7 +4,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
-[![Status: v0.2.2](https://img.shields.io/badge/status-v0.2.2-blue.svg)](#roadmap)
+[![Status: v0.2.3](https://img.shields.io/badge/status-v0.2.3-blue.svg)](#roadmap)
 
 Open Product Evals is a learning-in-public project: each evaluation starts with a concrete product question, an inspectable dataset, deterministic scoring, and an honest account of what the results do—and do not—prove.
 
@@ -148,6 +148,22 @@ and applies an explicit risk-first product gate. Read
 Use the [decision-record template](docs/DECISION_RECORD_TEMPLATE.md) to commit to
 the product question, thresholds, and next actions before looking at test data.
 
+### 5. Audit a prompt change example by example
+
+Compare the same model and examples before and after a prompt change:
+
+```bash
+python3 compare_variants.py results/prompt-v1.json results/prompt-v2.json \
+  --baseline-label "Prompt v1" \
+  --candidate-label "Prompt v2" \
+  --output results/prompt-change.md
+```
+
+The paired report shows metric and latency deltas, counts field-level wins and
+regressions, and lists examples that changed exact-match or schema validity. It
+refuses to compare different models, datasets, splits, example counts, or
+temperatures, while allowing the prompt fingerprints to differ.
+
 No Python packages are required; the runner uses only the standard library.
 
 ## What gets measured
@@ -182,7 +198,7 @@ All examples are fictional and manually reviewed. Public labels make this a usef
 
 ```bash
 python3 -m unittest discover -v
-python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py
+python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py
 ```
 
 ## What v0.2 adds
@@ -192,6 +208,7 @@ python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_
 - explicit failure types and dominant-error summaries;
 - dataset and prompt fingerprints for comparable runs;
 - Markdown comparison reports with configurable product gates;
+- paired prompt-variant reports with strict comparability checks;
 - a practical eval-learning curriculum;
 - automated tests across supported Python versions;
 - a structured edge-case contribution form.

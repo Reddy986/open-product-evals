@@ -38,6 +38,28 @@ python3 compare_results.py results/model-a.json results/model-b.json \
   --min-exact-match 0.80
 ```
 
+## Compare prompt variants on paired examples
+
+When one model is run before and after a prompt change, use the paired command:
+
+```bash
+python3 compare_variants.py results/prompt-v1.json results/prompt-v2.json \
+  --baseline-label "Prompt v1" \
+  --candidate-label "Prompt v2" \
+  --output results/prompt-change.md
+```
+
+The command requires the same model name, dataset fingerprint, split, selected
+example count, temperature, record IDs, and expected labels. Prompt
+fingerprints are expected to differ and are printed in the report. Every score
+and latency statistic gets a baseline, candidate, and delta; paired transitions
+show exact, category, priority, escalation, and schema-validity changes.
+
+An invalid output receives no credit for an individual field, even if a value
+could be recovered from the raw output. This keeps paired counts aligned with
+the deterministic scorer. Development-set changes reveal regression behavior
+on those examples; they do not establish generalization.
+
 ## Claims to avoid
 
 - “Model A is better” from one small synthetic test.

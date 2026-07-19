@@ -21,5 +21,4 @@ jobs:
       - name: Run tests
         run: python3 -m unittest discover -v
       - name: Compile sources
-        run: python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py
-
+        run: python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py
