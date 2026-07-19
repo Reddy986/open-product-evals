@@ -223,6 +223,11 @@ python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_
 
 The long-term goal is not another generic evaluation framework. It is a growing set of practical, inspectable evaluations that connect model behavior to product decisions.
 
+The next dataset milestone is governed by a public
+[dataset v2 held-out protocol](evals/support_triage/DATASET_V2_PROTOCOL.md): no
+new test examples are collected until the policy, review roles, access
+separation, coverage quotas, and release rule are frozen.
+
 ## Contributing
 
 The easiest contributions are realistic edge cases, label-policy critiques, scoring tests, and adapters for additional local runtimes. See [CONTRIBUTING.md](CONTRIBUTING.md).

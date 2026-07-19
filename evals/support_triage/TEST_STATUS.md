@@ -30,3 +30,8 @@ failures.
 
 This marker is intentionally permanent. A test set does not become unseen again
 because time passes or a new prompt is written.
+
+The design for a genuinely new held-out collection is documented in
+[DATASET_V2_PROTOCOL.md](DATASET_V2_PROTOCOL.md). That protocol currently
+contains no v2 ticket text or labels; collection begins only after its policy
+and access-separation requirements can be met.

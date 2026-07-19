@@ -133,7 +133,10 @@ new test set before making a fresh generalization claim.
 This repository has completed that step: the current support-triage test split
 was consumed on July 18, 2026 and is now a public regression set. Read its
 [permanent status](../evals/support_triage/TEST_STATUS.md) and the published
-decision before using it. A new held-out claim requires a new test-set version.
+decision before using it. A new held-out claim requires a new test-set version;
+study the executable [dataset v2 protocol](../evals/support_triage/DATASET_V2_PROTOCOL.md)
+to see how policy freeze, independent labeling, access separation, and a public
+decision gate fit together.
 
 ## How to know you are improving at evals
 

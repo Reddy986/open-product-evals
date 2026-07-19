@@ -22,13 +22,20 @@ Every example must:
 
 If the correct label is debatable, open an issue before submitting the example. Label disagreement is useful evaluation information, not something to hide.
 
+The current test split is consumed. Do not add a few examples to it and call it
+held out. Any new held-out collection must follow the design-first
+[dataset v2 protocol](evals/support_triage/DATASET_V2_PROTOCOL.md). The protocol
+requires a frozen policy, original fictional sourcing, two independent
+reviewers, adjudication, access separation, artifact fingerprints, and a
+one-time public release rule.
+
 ## Development
 
 Run the checks before opening a pull request:
 
 ```bash
 python3 -m unittest discover -v
-python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py
+python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py
 ```
 
 The project currently requires Python 3.10 or newer and intentionally has no third-party Python dependencies.
