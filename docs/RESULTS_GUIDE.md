@@ -84,3 +84,9 @@ suite, but should disclose the prior exposure.
 To make another held-out claim after learning from test failures, version the
 dataset and collect a new test split. Do not relabel failures, rerun individual
 examples, or move the threshold after seeing the score.
+
+For this repository, use the contributor-executable
+[dataset v2 held-out protocol](../evals/support_triage/DATASET_V2_PROTOCOL.md).
+It keeps new test content sealed from prompt authors, requires independent
+labels and adjudication, and publishes the complete result whether it passes or
+fails.
