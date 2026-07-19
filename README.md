@@ -198,7 +198,7 @@ All examples are fictional and manually reviewed. Public labels make this a usef
 
 ```bash
 python3 -m unittest discover -v
-python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py
+python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py calibrate_rubric.py
 ```
 
 ## What v0.2 adds
@@ -213,11 +213,41 @@ python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_
 - automated tests across supported Python versions;
 - a structured edge-case contribution form.
 
+## Start the v0.3 human-calibration lab
+
+Before trusting an LLM judge for subjective response quality, test whether two
+humans can apply the rubric consistently. The v0.3 draft includes 12 unlabeled,
+fictional response examples, observable 1–4 anchors, an independent critical-
+failure flag, and dependency-free agreement reporting.
+
+Create separate blind annotation sheets:
+
+```bash
+python3 calibrate_rubric.py init \
+  --dataset evals/response_quality/dataset.jsonl \
+  --reviewer reviewer-a \
+  --output results/calibration-work/reviewer-a.jsonl
+```
+
+After a second reviewer completes a separate file, compare them:
+
+```bash
+python3 calibrate_rubric.py compare \
+  results/calibration-work/reviewer-a.jsonl \
+  results/calibration-work/reviewer-b.jsonl \
+  --output results/calibration-work/calibration-report.md
+```
+
+The report measures exact agreement, within-one-point agreement, mean absolute
+difference, quadratic weighted Cohen's kappa, critical-failure agreement, and
+the examples that require adjudication. No agreement result is pre-filled or
+fabricated. Follow the complete [human rubric-calibration lab](docs/RUBRIC_CALIBRATION.md).
+
 ## Roadmap
 
 - **v0.1 — Triage:** objective labels, deterministic graders, local open-model runner
 - **v0.2 — Error analysis:** richer slice reports, reproducibility fingerprints, comparison gates
-- **v0.3 — Response quality:** rubric design and human-calibrated model grading
+- **v0.3 — Response quality (in progress):** human rubric calibration before model grading
 - **v0.4 — Model selection:** repeated trials, confidence intervals, memory and throughput
 - **v0.5 — New workflow:** customer-feedback extraction or RAG answer verification
 

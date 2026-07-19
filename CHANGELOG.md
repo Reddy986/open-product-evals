@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- A draft response-quality task and observable four-dimension rubric for v0.3.
+- Twelve public, fictional, unlabeled examples for blind human calibration.
+- A dependency-free CLI that creates separate annotation sheets and reports
+  exact agreement, mean absolute difference, quadratic weighted kappa,
+  critical-failure agreement, and adjudication targets.
+- A hands-on guide and tests for the human-first calibration workflow.
+
 ## 0.2.3 — Paired prompt-regression reports
 
 - Add a standard-library command for comparing one model across two prompts.
