@@ -1,0 +1,1543 @@
+{
+  "model": "qwen3:4b",
+  "created_at": "2026-07-19T00:19:58.238198+00:00",
+  "score": {
+    "count": 40,
+    "metrics": {
+      "category_accuracy": 0.95,
+      "priority_accuracy": 0.75,
+      "escalation_accuracy": 0.9,
+      "exact_match": 0.675,
+      "valid_schema_rate": 0.975,
+      "escalation_precision": 0.8947368421052632,
+      "escalation_recall": 0.8947368421052632
+    },
+    "slices": {
+      "account_access": {
+        "count": 12,
+        "category_accuracy": 0.9166666666666666,
+        "priority_accuracy": 0.5833333333333334,
+        "escalation_accuracy": 0.8333333333333334,
+        "exact_match": 0.5833333333333334,
+        "valid_schema_rate": 0.9166666666666666
+      },
+      "account_change": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "api": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "billing": {
+        "count": 12,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.8333333333333334,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.8333333333333334,
+        "valid_schema_rate": 1.0
+      },
+      "blocked": {
+        "count": 6,
+        "category_accuracy": 0.8333333333333334,
+        "priority_accuracy": 0.6666666666666666,
+        "escalation_accuracy": 0.8333333333333334,
+        "exact_match": 0.6666666666666666,
+        "valid_schema_rate": 0.8333333333333334
+      },
+      "boundary": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 0.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "browser": {
+        "count": 1,
+        "category_accuracy": 0.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "charged_after_cancel": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "compromise": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "cosmetic": {
+        "count": 2,
+        "category_accuracy": 0.5,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 0.5,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "crash": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "cross_platform": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "delay": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "disputed_charge": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "duplicate_charge": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "feature_request": {
+        "count": 4,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.75,
+        "escalation_accuracy": 0.75,
+        "exact_match": 0.5,
+        "valid_schema_rate": 1.0
+      },
+      "file_upload": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 0.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "human_action": {
+        "count": 19,
+        "category_accuracy": 0.9473684210526315,
+        "priority_accuracy": 0.6842105263157895,
+        "escalation_accuracy": 0.8947368421052632,
+        "exact_match": 0.6842105263157895,
+        "valid_schema_rate": 0.9473684210526315
+      },
+      "informational": {
+        "count": 4,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "integration": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.5,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.5,
+        "valid_schema_rate": 1.0
+      },
+      "invitation": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "invoice_change": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "missing_data": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "mobile": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "outage": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "ownership": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "password_reset": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "payment_failure": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "performance": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "permissions": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "pricing": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "privacy": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 0.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 1.0
+      },
+      "profile_change": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "refund": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "risk": {
+        "count": 4,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.75,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.75,
+        "valid_schema_rate": 1.0
+      },
+      "search": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "self_service": {
+        "count": 6,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 0.5,
+        "escalation_accuracy": 1.0,
+        "exact_match": 0.5,
+        "valid_schema_rate": 1.0
+      },
+      "sso": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "stuck_job": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "technical_issue": {
+        "count": 12,
+        "category_accuracy": 0.9166666666666666,
+        "priority_accuracy": 0.8333333333333334,
+        "escalation_accuracy": 0.9166666666666666,
+        "exact_match": 0.6666666666666666,
+        "valid_schema_rate": 1.0
+      },
+      "time_sensitive": {
+        "count": 2,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "two_factor": {
+        "count": 1,
+        "category_accuracy": 0.0,
+        "priority_accuracy": 0.0,
+        "escalation_accuracy": 0.0,
+        "exact_match": 0.0,
+        "valid_schema_rate": 0.0
+      },
+      "unrecognized_charge": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "verification": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "workaround": {
+        "count": 5,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      },
+      "workflow": {
+        "count": 1,
+        "category_accuracy": 1.0,
+        "priority_accuracy": 1.0,
+        "escalation_accuracy": 1.0,
+        "exact_match": 1.0,
+        "valid_schema_rate": 1.0
+      }
+    },
+    "error_summary": {
+      "invalid_schema": 1,
+      "missed_escalation": 2,
+      "multiple_errors": 2,
+      "unnecessary_escalation": 2,
+      "wrong_category": 1,
+      "wrong_priority": 9
+    },
+    "failures": [
+      {
+        "id": "dev-003",
+        "expected": {
+          "category": "billing",
+          "priority": "medium",
+          "escalate": false
+        },
+        "output": {
+          "category": "billing",
+          "priority": "low",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "billing",
+          "account_change",
+          "self_service"
+        ]
+      },
+      {
+        "id": "dev-006",
+        "expected": {
+          "category": "billing",
+          "priority": "high",
+          "escalate": true
+        },
+        "output": {
+          "category": "billing",
+          "priority": "medium",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "billing",
+          "disputed_charge",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-013",
+        "expected": {
+          "category": "account_access",
+          "priority": "medium",
+          "escalate": false
+        },
+        "output": {
+          "category": "account_access",
+          "priority": "low",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "account_access",
+          "password_reset",
+          "self_service"
+        ]
+      },
+      {
+        "id": "dev-015",
+        "expected": {
+          "category": "account_access",
+          "priority": "high",
+          "escalate": true
+        },
+        "output": null,
+        "valid_schema": false,
+        "error_types": [
+          "invalid_schema",
+          "missed_escalation"
+        ],
+        "slices": [
+          "account_access",
+          "two_factor",
+          "blocked",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-016",
+        "expected": {
+          "category": "account_access",
+          "priority": "high",
+          "escalate": true
+        },
+        "output": {
+          "category": "account_access",
+          "priority": "medium",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "account_access",
+          "ownership",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-017",
+        "expected": {
+          "category": "account_access",
+          "priority": "high",
+          "escalate": true
+        },
+        "output": {
+          "category": "account_access",
+          "priority": "medium",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority",
+          "missed_escalation"
+        ],
+        "slices": [
+          "account_access",
+          "privacy",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-021",
+        "expected": {
+          "category": "account_access",
+          "priority": "medium",
+          "escalate": false
+        },
+        "output": {
+          "category": "account_access",
+          "priority": "low",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "account_access",
+          "invitation",
+          "self_service"
+        ]
+      },
+      {
+        "id": "dev-030",
+        "expected": {
+          "category": "technical_issue",
+          "priority": "urgent",
+          "escalate": true
+        },
+        "output": {
+          "category": "technical_issue",
+          "priority": "medium",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "technical_issue",
+          "missing_data",
+          "risk",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-031",
+        "expected": {
+          "category": "technical_issue",
+          "priority": "high",
+          "escalate": true
+        },
+        "output": {
+          "category": "technical_issue",
+          "priority": "urgent",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "technical_issue",
+          "api",
+          "blocked",
+          "human_action"
+        ]
+      },
+      {
+        "id": "dev-032",
+        "expected": {
+          "category": "technical_issue",
+          "priority": "low",
+          "escalate": false
+        },
+        "output": {
+          "category": "general_question",
+          "priority": "low",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_category"
+        ],
+        "slices": [
+          "technical_issue",
+          "cosmetic",
+          "browser"
+        ]
+      },
+      {
+        "id": "dev-034",
+        "expected": {
+          "category": "technical_issue",
+          "priority": "medium",
+          "escalate": false
+        },
+        "output": {
+          "category": "technical_issue",
+          "priority": "medium",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "unnecessary_escalation"
+        ],
+        "slices": [
+          "technical_issue",
+          "file_upload",
+          "boundary"
+        ]
+      },
+      {
+        "id": "dev-037",
+        "expected": {
+          "category": "feature_request",
+          "priority": "low",
+          "escalate": false
+        },
+        "output": {
+          "category": "feature_request",
+          "priority": "low",
+          "escalate": true
+        },
+        "valid_schema": true,
+        "error_types": [
+          "unnecessary_escalation"
+        ],
+        "slices": [
+          "feature_request",
+          "cosmetic"
+        ]
+      },
+      {
+        "id": "dev-039",
+        "expected": {
+          "category": "feature_request",
+          "priority": "medium",
+          "escalate": false
+        },
+        "output": {
+          "category": "feature_request",
+          "priority": "low",
+          "escalate": false
+        },
+        "valid_schema": true,
+        "error_types": [
+          "wrong_priority"
+        ],
+        "slices": [
+          "feature_request",
+          "integration"
+        ]
+      }
+    ],
+    "latency_seconds": {
+      "mean": 38.40948700207555,
+      "median": 34.659818833002646,
+      "max": 110.9520091250015
+    }
+  },
+  "records": [
+    {
+      "id": "dev-001",
+      "ticket": "I was charged twice for my subscription this month.",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "duplicate_charge",
+        "human_action"
+      ],
+      "latency_seconds": 13.960040499994648
+    },
+    {
+      "id": "dev-002",
+      "ticket": "Where can I download a copy of last month's invoice?",
+      "expected": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "billing",
+        "informational",
+        "self_service"
+      ],
+      "latency_seconds": 20.62081604200648
+    },
+    {
+      "id": "dev-003",
+      "ticket": "How do I change the card used for my next renewal?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\"category\": \"billing\", \"priority\": \"low\", \"escalate\": false}",
+      "slices": [
+        "billing",
+        "account_change",
+        "self_service"
+      ],
+      "latency_seconds": 16.303082667000126
+    },
+    {
+      "id": "dev-004",
+      "ticket": "I cancelled yesterday. Please cancel the pending renewal and refund today's charge.",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "refund",
+        "human_action"
+      ],
+      "latency_seconds": 50.645243874998414
+    },
+    {
+      "id": "dev-005",
+      "ticket": "Our company tax ID is missing from the invoice. Can someone correct it?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"medium\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "invoice_change",
+        "human_action"
+      ],
+      "latency_seconds": 60.04715962499904
+    },
+    {
+      "id": "dev-006",
+      "ticket": "The welcome coupon was accepted but the discount is not on my bill.",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"medium\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "disputed_charge",
+        "human_action"
+      ],
+      "latency_seconds": 64.98415704199579
+    },
+    {
+      "id": "dev-007",
+      "ticket": "There is a $499 charge from you that nobody at our company recognizes.",
+      "expected": {
+        "category": "billing",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "unrecognized_charge",
+        "risk",
+        "human_action"
+      ],
+      "latency_seconds": 23.2555297910003
+    },
+    {
+      "id": "dev-008",
+      "ticket": "My payment failed because my old card expired. How can I retry it?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "billing",
+        "payment_failure",
+        "self_service"
+      ],
+      "latency_seconds": 38.75189633300761
+    },
+    {
+      "id": "dev-009",
+      "ticket": "What is the difference between the Starter and Team plans?",
+      "expected": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "billing",
+        "pricing",
+        "informational"
+      ],
+      "latency_seconds": 21.899869000000763
+    },
+    {
+      "id": "dev-010",
+      "ticket": "If I upgrade halfway through the month, is the price prorated?",
+      "expected": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "billing",
+        "pricing",
+        "informational"
+      ],
+      "latency_seconds": 11.332972249991144
+    },
+    {
+      "id": "dev-011",
+      "ticket": "I cancelled two months ago but just received another charge.",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "billing",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "billing",
+        "charged_after_cancel",
+        "human_action"
+      ],
+      "latency_seconds": 19.413783541007433
+    },
+    {
+      "id": "dev-012",
+      "ticket": "Can receipts be issued in euros instead of dollars?",
+      "expected": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "billing",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"billing\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "billing",
+        "informational"
+      ],
+      "latency_seconds": 18.864427166001406
+    },
+    {
+      "id": "dev-013",
+      "ticket": "The password reset link says it expired. Can I request another one?",
+      "expected": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "password_reset",
+        "self_service"
+      ],
+      "latency_seconds": 30.36776033398928
+    },
+    {
+      "id": "dev-014",
+      "ticket": "Someone changed my password and I cannot access my account.",
+      "expected": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "compromise",
+        "risk",
+        "human_action"
+      ],
+      "latency_seconds": 19.16040270900703
+    },
+    {
+      "id": "dev-015",
+      "ticket": "I replaced my phone and no longer have my two-factor codes.",
+      "expected": {
+        "category": "account_access",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "two_factor",
+        "blocked",
+        "human_action"
+      ],
+      "latency_seconds": 110.9520091250015
+    },
+    {
+      "id": "dev-016",
+      "ticket": "Please change the owner email from my former employee to me.",
+      "expected": {
+        "category": "account_access",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"medium\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "ownership",
+        "human_action"
+      ],
+      "latency_seconds": 45.00987958299811
+    },
+    {
+      "id": "dev-017",
+      "ticket": "I want my account and all associated personal data permanently deleted.",
+      "expected": {
+        "category": "account_access",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "privacy",
+        "human_action"
+      ],
+      "latency_seconds": 69.53638033299649
+    },
+    {
+      "id": "dev-018",
+      "ticket": "Too many failed attempts locked my account and I need access for a client meeting.",
+      "expected": {
+        "category": "account_access",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "blocked",
+        "time_sensitive",
+        "human_action"
+      ],
+      "latency_seconds": 41.45422920800047
+    },
+    {
+      "id": "dev-019",
+      "ticket": "I typed the wrong email address when signing up. Can I fix it in settings?",
+      "expected": {
+        "category": "account_access",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "profile_change",
+        "self_service"
+      ],
+      "latency_seconds": 18.474698124991846
+    },
+    {
+      "id": "dev-020",
+      "ticket": "Nobody on our team can sign in through SSO this morning.",
+      "expected": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "sso",
+        "outage",
+        "human_action"
+      ],
+      "latency_seconds": 19.79854200000409
+    },
+    {
+      "id": "dev-021",
+      "ticket": "I invited my colleague using the wrong email. How do I revoke the invitation?",
+      "expected": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "invitation",
+        "self_service"
+      ],
+      "latency_seconds": 32.8034442079952
+    },
+    {
+      "id": "dev-022",
+      "ticket": "The verification email has not arrived after ten minutes.",
+      "expected": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "verification",
+        "delay"
+      ],
+      "latency_seconds": 34.09544266600278
+    },
+    {
+      "id": "dev-023",
+      "ticket": "My new password works on the website but not in the mobile app.",
+      "expected": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "account_access",
+        "cross_platform",
+        "workaround"
+      ],
+      "latency_seconds": 24.071927292010514
+    },
+    {
+      "id": "dev-024",
+      "ticket": "I received a new-device login alert from another country and it was not me.",
+      "expected": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "account_access",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"account_access\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "account_access",
+        "compromise",
+        "risk",
+        "human_action"
+      ],
+      "latency_seconds": 13.4738233340031
+    },
+    {
+      "id": "dev-025",
+      "ticket": "The app crashes every time I attach a PDF to a message.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "crash",
+        "blocked",
+        "human_action"
+      ],
+      "latency_seconds": 33.54980020799849
+    },
+    {
+      "id": "dev-026",
+      "ticket": "Our export has shown 'processing' for six hours and the finance team is waiting.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "stuck_job",
+        "time_sensitive",
+        "human_action"
+      ],
+      "latency_seconds": 42.9038872920064
+    },
+    {
+      "id": "dev-027",
+      "ticket": "The dashboard takes around eight seconds to load, but it eventually appears.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "technical_issue",
+        "performance",
+        "workaround"
+      ],
+      "latency_seconds": 49.423636667008395
+    },
+    {
+      "id": "dev-028",
+      "ticket": "Every user sees a blank page and our team cannot use the service at all.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "outage",
+        "blocked",
+        "human_action"
+      ],
+      "latency_seconds": 15.111451375007164
+    },
+    {
+      "id": "dev-029",
+      "ticket": "The mobile app cannot open my camera, but uploading an existing photo works.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "technical_issue",
+        "mobile",
+        "workaround"
+      ],
+      "latency_seconds": 35.22419500000251
+    },
+    {
+      "id": "dev-030",
+      "ticket": "A folder containing this quarter's work disappeared after the update.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "missing_data",
+        "risk",
+        "human_action"
+      ],
+      "latency_seconds": 53.88530350000656
+    },
+    {
+      "id": "dev-031",
+      "ticket": "The API returns 500 for every request to the reports endpoint.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "urgent",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"urgent\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "api",
+        "blocked",
+        "human_action"
+      ],
+      "latency_seconds": 35.56435391699779
+    },
+    {
+      "id": "dev-032",
+      "ticket": "One icon is slightly misaligned in Safari, but everything still works.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "general_question",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"general_question\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "technical_issue",
+        "cosmetic",
+        "browser"
+      ],
+      "latency_seconds": 79.84213770799397
+    },
+    {
+      "id": "dev-033",
+      "ticket": "Our CRM integration disconnected and new leads have stopped syncing.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "high",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"high\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "integration",
+        "blocked",
+        "human_action"
+      ],
+      "latency_seconds": 56.41377637500409
+    },
+    {
+      "id": "dev-034",
+      "ticket": "A 40 MB video will not upload, while smaller files upload normally.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": true\n}",
+      "slices": [
+        "technical_issue",
+        "file_upload",
+        "boundary"
+      ],
+      "latency_seconds": 65.62915479199728
+    },
+    {
+      "id": "dev-035",
+      "ticket": "Email notifications arrive about fifteen minutes late.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "technical_issue",
+        "delay",
+        "workaround"
+      ],
+      "latency_seconds": 50.86648983399209
+    },
+    {
+      "id": "dev-036",
+      "ticket": "Search returns no results for documents that I can open directly.",
+      "expected": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "technical_issue",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"technical_issue\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "technical_issue",
+        "search",
+        "workaround"
+      ],
+      "latency_seconds": 45.34180779100279
+    },
+    {
+      "id": "dev-037",
+      "ticket": "Please add a dark mode for people who work at night.",
+      "expected": {
+        "category": "feature_request",
+        "priority": "low",
+        "escalate": false
+      },
+      "output": {
+        "category": "feature_request",
+        "priority": "low",
+        "escalate": true
+      },
+      "raw_output": "{\n  \"category\": \"feature_request\",\n  \"priority\": \"low\",\n  \"escalate\": true\n}",
+      "slices": [
+        "feature_request",
+        "cosmetic"
+      ],
+      "latency_seconds": 58.61415191600099
+    },
+    {
+      "id": "dev-038",
+      "ticket": "We would like to update the status of 500 records in one bulk action.",
+      "expected": {
+        "category": "feature_request",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "feature_request",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"feature_request\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "feature_request",
+        "workflow"
+      ],
+      "latency_seconds": 26.711106292001205
+    },
+    {
+      "id": "dev-039",
+      "ticket": "Do you plan to build a native Salesforce integration?",
+      "expected": {
+        "category": "feature_request",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "feature_request",
+        "priority": "low",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"feature_request\",\n  \"priority\": \"low\",\n  \"escalate\": false\n}",
+      "slices": [
+        "feature_request",
+        "integration"
+      ],
+      "latency_seconds": 53.96853804199782
+    },
+    {
+      "id": "dev-040",
+      "ticket": "Could you add custom roles so contractors only see assigned projects?",
+      "expected": {
+        "category": "feature_request",
+        "priority": "medium",
+        "escalate": false
+      },
+      "output": {
+        "category": "feature_request",
+        "priority": "medium",
+        "escalate": false
+      },
+      "raw_output": "{\n  \"category\": \"feature_request\",\n  \"priority\": \"medium\",\n  \"escalate\": false\n}",
+      "slices": [
+        "feature_request",
+        "permissions"
+      ],
+      "latency_seconds": 14.052172625000821
+    }
+  ],
+  "evaluation": {
+    "split": "development",
+    "selected_examples": 40,
+    "dataset_path": "evals/support_triage/dataset.jsonl",
+    "dataset_sha256": "d299f565faf9c7249e5164d75f16cd4f5be781235556fc108bbf7cbf3b5522c9",
+    "prompt_path": "evals/support_triage/prompt_v2.txt",
+    "prompt_sha256": "110d4bb03f679b3f9c3e80e61ce1680bd3864c903f36423b440c53801d00e3d9",
+    "temperature": 0
+  }
+}

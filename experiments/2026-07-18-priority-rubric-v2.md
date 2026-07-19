@@ -84,3 +84,19 @@ python3 run_eval.py \
 - A single temperature-zero run does not establish variance or confidence.
 - The adoption rule prevents regression in two models but may reject a prompt
   that is beneficial for only one deployment target.
+
+## Results recorded after the run
+
+Prompt v2 failed the pre-committed adoption rule and is rejected.
+
+| Model | Priority accuracy | Escalation recall | Exact match | Valid schema |
+|---|---:|---:|---:|---:|
+| `gemma3:4b` v2 | 50.0% | 52.6% | 40.0% | 100.0% |
+| `qwen3:4b` v2 | 75.0% | 89.5% | 67.5% | 97.5% |
+
+Both candidates regressed on priority accuracy, exact match, and escalation
+recall. Qwen3 also produced one invalid schema. See the
+[full rejection analysis](../results/published/2026-07-18-priority-rubric-v2/README.md)
+and raw outputs.
+
+**Decision:** retain prompt v1. The held-out test remains untouched.
