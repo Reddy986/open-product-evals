@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 — Frozen test decision
+
+- Publish a pre-committed priority-rubric experiment and its rejection.
+- Publish the first one-time Qwen3 held-out run and failed product decision.
+- Mark the consumed test split as a public regression set.
+- Default the model runner to the development split.
+- Document multi-intent and reference-policy gaps without changing test scores.
+
 ## 0.2.1 — First open-model comparison
 
 - Publish reproducible Qwen3 4B and Gemma 3 4B development runs with raw outputs.

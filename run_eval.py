@@ -136,17 +136,29 @@ def print_summary(result: dict[str, Any]) -> None:
         print(f"Weakest slices: {summary}")
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
+    """Build the command-line parser with development-safe defaults."""
+
     parser = argparse.ArgumentParser(
         description="Evaluate local Ollama models on support-ticket triage."
     )
     parser.add_argument("--models", nargs="+", required=True, help="Ollama model names")
-    parser.add_argument("--split", choices=["development", "test", "all"], default="test")
+    parser.add_argument(
+        "--split",
+        choices=["development", "test", "all"],
+        default="development",
+        help="Dataset split (default: development)",
+    )
     parser.add_argument("--limit", type=int, help="Run only the first N selected examples")
     parser.add_argument("--dataset", type=Path, default=DEFAULT_DATASET)
     parser.add_argument("--prompt", type=Path, default=DEFAULT_PROMPT)
     parser.add_argument("--base-url", default="http://localhost:11434")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "results")
+    return parser
+
+
+def main() -> None:
+    parser = build_parser()
     args = parser.parse_args()
 
     dataset = load_dataset(args.dataset, args.split)

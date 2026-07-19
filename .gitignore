@@ -2,6 +2,6 @@ __pycache__/
 *.py[cod]
 .DS_Store
 .venv/
-results/*.json
+results/**/*.json
+!results/published/**/*.json
 !results/.gitkeep
-

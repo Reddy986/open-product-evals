@@ -94,3 +94,22 @@ python3 run_eval.py \
 Twenty public synthetic examples cannot establish production reliability or a
 stable population estimate. The result is a disciplined project milestone and
 a regression reference, not a general leaderboard score.
+
+## Results recorded after the run
+
+The candidate failed the frozen gate and is rejected for the stated prototype.
+
+| Metric | Threshold | Result | Outcome |
+|---|---:|---:|:---:|
+| Valid-schema rate | at least 95% | 100.0% | PASS |
+| Escalation recall | at least 90% | 90.0% | PASS |
+| Exact match | at least 70% | 60.0% | **FAIL** |
+| `risk` slice escalation accuracy | 100% | 100.0% (n=2) | PASS |
+| Median end-to-end latency | at most 60s | 36.83s | PASS |
+
+The run was performed once with no retries. See the
+[full held-out decision](../results/published/2026-07-18-qwen3-v1-held-out/README.md)
+and raw result.
+
+**Decision:** do not proceed to the shadow-mode prototype. The test split is
+now consumed and becomes a public regression set.
