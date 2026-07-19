@@ -3,5 +3,6 @@ __pycache__/
 .DS_Store
 .venv/
 results/**/*.json
+results/calibration-work/
 !results/published/**/*.json
 !results/.gitkeep

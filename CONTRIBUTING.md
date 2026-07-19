@@ -29,13 +29,30 @@ requires a frozen policy, original fictional sourcing, two independent
 reviewers, adjudication, access separation, artifact fingerprints, and a
 one-time public release rule.
 
+## Challenge the v0.3 response-quality rubric
+
+A useful non-code contribution is an independent score for one public
+response-quality example:
+
+1. Read `evals/response_quality/TASK.md` and `RUBRIC.md`.
+2. Choose one record from `evals/response_quality/dataset.jsonl`.
+3. Score all four dimensions and the independent critical-failure flag before
+   looking for anyone else's score.
+4. Open a **Challenge a response-quality score** issue and cite the exact anchor
+   or rule behind the judgment.
+
+Disagreement is not treated as reviewer error by default. It may reveal a vague
+anchor, a missing policy boundary, or an ambiguous example. Full calibration
+files should follow `docs/RUBRIC_CALIBRATION.md` so dataset fingerprints, rubric
+versions, and blind-review discipline remain inspectable.
+
 ## Development
 
 Run the checks before opening a pull request:
 
 ```bash
 python3 -m unittest discover -v
-python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py
+python3 -m compileall -q open_product_evals run_eval.py run_baseline.py compare_results.py compare_variants.py calibrate_rubric.py
 ```
 
 The project currently requires Python 3.10 or newer and intentionally has no third-party Python dependencies.

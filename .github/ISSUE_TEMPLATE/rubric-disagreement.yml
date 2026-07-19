@@ -1,0 +1,75 @@
+name: Challenge a response-quality score
+description: Apply the v0.3 rubric to one public example and explain a boundary or disagreement.
+title: "[rubric] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Review the task and rubric before scoring. Do not look for another person's answer first; independent disagreement is useful evidence.
+  - type: input
+    id: example
+    attributes:
+      label: Calibration example ID
+      description: Use an ID from evals/response_quality/dataset.jsonl.
+      placeholder: rq-cal-001
+    validations:
+      required: true
+  - type: dropdown
+    id: dimension
+    attributes:
+      label: Dimension with the clearest rubric question
+      options:
+        - correctness
+        - policy_safety
+        - actionability
+        - communication
+        - critical_failure
+    validations:
+      required: true
+  - type: dropdown
+    id: score
+    attributes:
+      label: Proposed 1–4 score
+      description: Choose not-applicable when challenging only the critical-failure flag.
+      options:
+        - not-applicable
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+    validations:
+      required: true
+  - type: dropdown
+    id: critical
+    attributes:
+      label: Proposed critical-failure flag
+      options:
+        - "false"
+        - "true"
+        - unchanged / not the focus
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Rubric anchor or critical-failure rule
+      description: Quote or paraphrase the specific rule you applied.
+    validations:
+      required: true
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Reasoning and ambiguity
+      description: Explain the observable evidence in the ticket and draft response. Note genuine uncertainty.
+    validations:
+      required: true
+  - type: checkboxes
+    id: discipline
+    attributes:
+      label: Review discipline
+      options:
+        - label: I formed this judgment before reading another reviewer's score.
+          required: true
+        - label: My submission contains no customer, employer, personal, or secret data.
+          required: true
