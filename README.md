@@ -4,7 +4,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
-[![Status: v0.2.1](https://img.shields.io/badge/status-v0.2.1-blue.svg)](#roadmap)
+[![Status: v0.2.2](https://img.shields.io/badge/status-v0.2.2-blue.svg)](#roadmap)
 
 Open Product Evals is a learning-in-public project: each evaluation starts with a concrete product question, an inspectable dataset, deterministic scoring, and an honest account of what the results do—and do not—prove.
 
@@ -30,12 +30,29 @@ Expected output:
 }
 ```
 
-The workflow uses 40 development tickets for error analysis, then reserves 20
-held-out tickets for the final comparison. It reports category accuracy,
+The workflow uses 40 development tickets for error analysis and 20 test tickets
+for a frozen comparison. It reports category accuracy,
 priority accuracy, escalation precision and recall, exact match, schema
 validity, latency, and performance on behavioral slices.
 
-## Latest published comparison
+## Latest published decision
+
+Qwen3 4B passed the development gate, but failed the pre-committed test gate:
+
+| Held-out metric | Threshold | Result | Outcome |
+|---|---:|---:|:---:|
+| Valid schema | at least 95% | 100.0% | PASS |
+| Escalation recall | at least 90% | 90.0% | PASS |
+| Exact match | at least 70% | 60.0% | **FAIL** |
+| `risk` slice escalation | 100% | 100.0% | PASS |
+| Median latency | at most 60s | 36.83s | PASS |
+
+The project therefore rejects the proposed human-reviewed prototype. Read the
+[held-out decision and raw result](results/published/2026-07-18-qwen3-v1-held-out/README.md).
+The test split has now been consumed and is a public regression set, not a
+pristine held-out set.
+
+### Earlier development comparison
 
 The first reproducible local-model run compares Qwen3 4B with Gemma 3 4B on all
 40 development examples:
@@ -47,8 +64,9 @@ The first reproducible local-model run compares Qwen3 4B with Gemma 3 4B on all
 
 Qwen3 was more accurate; Gemma 3 was about 21 times faster. Read the
 [decision record and raw results](results/published/2026-07-18-open-model-comparison/README.md)
-for the setup, failure analysis, limitations, and next experiment. A development
-gate pass is not a production-safety claim.
+for the setup, failure analysis, limitations, and next experiment. The project
+also publishes a [rejected prompt experiment](results/published/2026-07-18-priority-rubric-v2/README.md)
+that shows why a more explicit rubric performed worse.
 
 ## Why this exists
 
@@ -100,15 +118,22 @@ ollama pull gemma3:4b
 python3 run_eval.py --models qwen3:4b gemma3:4b --split development --limit 3
 ```
 
-### 3. After iteration, run the held-out test split
+### 3. Use the test split as a public regression set
 
-Freeze the prompt, labels, and gate first. Then run the held-out split once:
+The original held-out run is complete. Read the permanent
+[test status](evals/support_triage/TEST_STATUS.md) before interpreting a new
+score. You can reproduce the published test result with:
 
 ```bash
-python3 run_eval.py --models qwen3:4b gemma3:4b --split test
+python3 run_eval.py \
+  --models qwen3:4b \
+  --split test \
+  --prompt evals/support_triage/prompt.txt
 ```
 
-Machine-readable results are written to `results/` and excluded from Git by default so you can decide what to publish.
+Machine-readable results are written to `results/` and excluded from Git by
+default so you can decide what to publish. Development is the default split to
+reduce accidental reuse of the consumed test set.
 
 ### 4. Compare compatible results
 
@@ -147,7 +172,7 @@ Read the full [task and labeling specification](evals/support_triage/TASK.md).
 `evals/support_triage/dataset.jsonl` contains:
 
 - 40 development examples for prompt iteration and error analysis;
-- 20 test examples for comparison;
+- 20 consumed test examples for transparent regression comparison;
 - explicit expected labels;
 - behavioral slices such as `compromise`, `privacy`, `multi_intent`, `ambiguous`, and `human_action`.
 

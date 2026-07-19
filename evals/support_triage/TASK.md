@@ -52,7 +52,10 @@ public synthetic test set is too small to demonstrate production reliability.
 
 ## Dataset
 
-The dataset contains 60 manually reviewed, synthetic English-language tickets: 40 development examples and 20 test examples. It contains no customer or employer data.
+The dataset contains 60 manually reviewed, synthetic English-language tickets:
+40 development examples and 20 test examples. It contains no customer or
+employer data. The test split was first used on July 18, 2026 and is now a
+public regression set; see [TEST_STATUS.md](TEST_STATUS.md).
 
 ## Limitations
 

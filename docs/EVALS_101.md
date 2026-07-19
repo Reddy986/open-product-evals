@@ -130,6 +130,11 @@ Then run the held-out split once. If you change the prompt or policy in response
 the test set has become development data; version the evaluation and create a
 new test set before making a fresh generalization claim.
 
+This repository has completed that step: the current support-triage test split
+was consumed on July 18, 2026 and is now a public regression set. Read its
+[permanent status](../evals/support_triage/TEST_STATUS.md) and the published
+decision before using it. A new held-out claim requires a new test-set version.
+
 ## How to know you are improving at evals
 
 You are progressing when you can:
@@ -143,4 +148,3 @@ You are progressing when you can:
 
 The goal is not a perfect score. It is a decision process that another person
 can inspect, reproduce, challenge, and improve.
-

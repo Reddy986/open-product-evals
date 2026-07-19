@@ -52,3 +52,13 @@ Prefer a bounded claim:
 > runtime, Model A missed fewer escalation cases than Model B. More representative
 > data and repeated trials are needed before a production decision.
 
+## After a held-out test is used
+
+A test split is not pristine after its predictions and failures influence the
+next prompt, policy, labels, or model choice. Keep the result, publish failed
+gates, and mark the split as consumed. Future runs may use it as a regression
+suite, but should disclose the prior exposure.
+
+To make another held-out claim after learning from test failures, version the
+dataset and collect a new test split. Do not relabel failures, rerun individual
+examples, or move the threshold after seeing the score.
