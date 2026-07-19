@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.3 — Paired prompt-regression reports
+
+- Add a standard-library command for comparing one model across two prompts.
+- Reject comparisons that change model, data, split, count, or temperature.
+- Report metric, latency, exact-match, field-level, and schema transitions.
+- Publish generated reports for the rejected priority-rubric experiment.
+- Correct one hand-counted Qwen escalation transition exposed by the report.
+
 ## 0.2.2 — Frozen test decision
 
 - Publish a pre-committed priority-rubric experiment and its rejection.
